@@ -1,0 +1,47 @@
+{
+	"name": "@davidosborn/merge-sort-stream",
+	"version": "0.0.1",
+	"description": "A readable stream that merges multiple ordered streams",
+	"keywords": [
+		"merge",
+		"ordered",
+		"sort",
+		"stream"
+	],
+	"homepage": "https://github.com/davidosborn/merge-sort-stream#readme",
+	"bugs": {
+		"url": "https://github.com/davidosborn/merge-sort-stream/issues",
+		"email": "david@davidosborn.io"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "David Osborn",
+		"email": "david@davidosborn.io",
+		"url": "http://davidosborn.io/"
+	},
+	"files": [
+		"lib"
+	],
+	"main": "lib/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davidosborn/merge-sort-stream"
+	},
+	"scripts": {
+		"build": "npx babel -d lib src",
+		"prepublishOnly": "npm run build"
+	},
+	"devDependencies": {
+		"@babel/cli": "*",
+		"@babel/core": "*",
+		"@davidosborn/babel-preset": "*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"babel": {
+		"presets": [
+			"@davidosborn/babel-preset"
+		]
+	}
+}
