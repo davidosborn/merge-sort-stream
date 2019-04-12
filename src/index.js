@@ -89,7 +89,19 @@ function mergeSortStream(cmp, streams) {
 		}
 
 		source.stream.pipe(ws)
+		source.stream.once('error', function(err) {
+			ws.emit('error', err)
+			rs.emit('error', err)
+		})
 		source.stream.on('end', function() {
+			if (!source.buffer.length) {
+				for (let i = 0; i < sources.length; ++i) {
+					if (sources[i] === source) {
+						sources.splice(i, 1)
+						break
+					}
+				}
+			}
 			rs._read()
 		})
 	}
