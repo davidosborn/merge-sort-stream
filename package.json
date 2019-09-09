@@ -1,6 +1,6 @@
 {
 	"name": "@davidosborn/merge-sort-stream",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A readable stream that merges multiple ordered streams",
 	"keywords": [
 		"merge",
